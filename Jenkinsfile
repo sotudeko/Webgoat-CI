@@ -80,7 +80,7 @@ pipeline {
         stage('Upload to Nexus Repository'){
             steps {
                 script {
-                    nexusPublisher nexusInstanceId: 'nxrm3', nexusRepositoryId: "${DEV_REPO}", packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'war', filePath: "${ARTEFACT_NAME}"]], mavenCoordinate: [artifactId: 'WebGoat', groupId: 'org.demo.ci', packaging: 'war', version: "${BUILD_VERSION}"]]], tagName: "${BUILD_TAG}"
+                    nexusPublisher nexusInstanceId: 'nxrm3', nexusRepositoryId: "${DEV_REPO}", packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'war', filePath: "${ARTEFACT_NAME}"]], mavenCoordinate: [artifactId: 'WebGoat', groupId: 'org.example.ci', packaging: 'war', version: "${BUILD_VERSION}"]]], tagName: "${BUILD_TAG}"
                 }
             }
         }
